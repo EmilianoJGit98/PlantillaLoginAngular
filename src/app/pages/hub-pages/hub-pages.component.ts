@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, HeaderComponent],
   templateUrl: './hub-pages.component.html',
-  styleUrl: './hub-pages.component.css'
+  styleUrl: './hub-pages.component.css',
 })
-export class HubPagesComponent {
-
-}
+export class HubPagesComponent {}
