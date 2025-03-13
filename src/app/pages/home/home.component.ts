@@ -51,7 +51,9 @@ interface comprobante {
 export class HomeComponent implements AfterViewInit {
   deshabilitados: number = 1;
   estadoCargaEventos: boolean = false;
-  msjVista: string = 'Ver eventos inactivos';
+  msjVista: string = 'Mostrar solo los registros inactivos';
+
+  filterValue: string = '';
 
   displayedColumns: string[] = [
     'NroComprobante',
@@ -308,8 +310,6 @@ export class HomeComponent implements AfterViewInit {
     },
   ]);
 
-  filterValue: string = '';
-
   // Captura la instancia del paginator
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -377,8 +377,8 @@ export class HomeComponent implements AfterViewInit {
     // Actualiza el mensaje de vista
     this.msjVista =
       this.deshabilitados === 1
-        ? 'Mostrar Recibos Pendientes'
-        : 'Mostrar Recibos Importados';
+        ? 'Mostrar todos los registros'
+        : 'Mostrar solo los registros inactivos';
     // this.iconEmpty =
     //   this.deshabilitados === 1 ? 'visibility' : 'visibility_off';
 
